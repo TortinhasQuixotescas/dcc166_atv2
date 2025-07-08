@@ -25,6 +25,7 @@ GROUP BY d.dish_id,
     d.name,
     d.price,
     d.weight_in_grams;
+--
 CREATE VIEW IF NOT EXISTS vw_IngredientUsage AS
 SELECT i.ingredient_id,
     i.name AS ingredient_name,
