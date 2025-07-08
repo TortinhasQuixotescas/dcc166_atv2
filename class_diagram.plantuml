@@ -1,0 +1,24 @@
+@startuml bakery
+
+class Ingredient {
+    -id : int
+    -name : String
+    -cost_per_gram : double
+}
+
+class Dish {
+    -id : int
+    -name : String
+    -selling_price : double
+    -weight : double
+}
+
+class Usage {
+    -id : int
+    -weight : double
+}
+
+Usage "0..*" -r- "1" Ingredient : contains >
+Usage "0..*" -l- "1" Dish : belongs to >
+
+@enduml
