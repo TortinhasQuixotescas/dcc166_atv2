@@ -1,24 +1,30 @@
 @startuml bakery
 
+hide empty members
+
 class Ingredient {
-    -id : int
     -name : String
+}
+
+class IngredientCost {
+    -start_date : Date
+    -end_date : Date
     -cost_per_gram : double
 }
 
+Ingredient "1" -- "0..*" IngredientCost : has >
+
 class Dish {
-    -id : int
     -name : String
-    -selling_price : double
-    -weight : double
+    -price : double
+    -weight_in_grams : double
 }
 
 class Usage {
-    -id : int
-    -weight : double
+    -weight_in_grams : double
 }
 
-Usage "0..*" -r- "1" Ingredient : contains >
-Usage "0..*" -l- "1" Dish : belongs to >
+Usage "0..*" - "1" Ingredient : contains >
+Dish "1" - "0..*" Usage : uses >
 
 @enduml
