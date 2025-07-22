@@ -12,7 +12,7 @@ class INGREDIENT_COST {
     -cost_per_gram : double
 }
 
-INGREDIENT "1" -- "0..*" INGREDIENT_COST : has >
+INGREDIENT "1" - "0..*" INGREDIENT_COST : has >
 
 class DISH {
     -name : String
