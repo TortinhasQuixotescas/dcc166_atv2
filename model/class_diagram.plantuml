@@ -2,29 +2,29 @@
 
 hide empty members
 
-class Ingredient {
+class INGREDIENT {
     -name : String
 }
 
-class IngredientCost {
+class INGREDIENT_COST {
     -start_date : Date
     -end_date : Date
     -cost_per_gram : double
 }
 
-Ingredient "1" -- "0..*" IngredientCost : has >
+INGREDIENT "1" -- "0..*" INGREDIENT_COST : has >
 
-class Dish {
+class DISH {
     -name : String
     -price : double
     -weight_in_grams : double
 }
 
-class Usage {
+class USAGE {
     -weight_in_grams : double
 }
 
-Usage "0..*" - "1" Ingredient : contains >
-Dish "1" - "0..*" Usage : uses >
+USAGE "0..*" - "1" INGREDIENT : contains >
+DISH "1" - "0..*" USAGE : uses >
 
 @enduml
